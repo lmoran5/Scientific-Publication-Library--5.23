@@ -1,4 +1,3 @@
-<script>
 document.addEventListener("DOMContentLoaded", function() {
     history.pushState({}, "", "/scientific-publication-library-test");
     updateResultsCount();
@@ -83,4 +82,3 @@ function clearFilters() {
 
     applyFilters();
 }
-</script>
