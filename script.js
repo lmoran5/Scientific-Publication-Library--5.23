@@ -34,13 +34,13 @@ function applyFilters() {
         const tdSubSpecialty = tr[i].getElementsByTagName("td")[3];
         const tdProduct = tr[i].getElementsByTagName("td")[4];
         const tdAuthor = tr[i].getElementsByTagName("td")[5];
-        const tdTag = tr[i] .getElementsByTagName("td")[6];
 
         const tagMatch = !filters.tagSearch || (tdTag && tdTag.textContent.toLowerCase().includes(filters.tagSearch));
         const journalNameMatch = !filters.journalNameSearch || (tdJournalName && tdJournalName.textContent.toLowerCase().includes(filters.journalNameSearch));
         const subSpecialtyMatch = !filters.subSpecialty || (tdSubSpecialty && tdSubSpecialty.textContent.toLowerCase().includes(filters.subSpecialty));
         const productMatch = !filters.productDropdown || (tdProduct && tdProduct.textContent.toLowerCase().includes(filters.productDropdown));
         const authorMatch = !filters.authorDropdown || (tdAuthor && tdAuthor.textContent.toLowerCase().includes(filters.authorDropdown));
+
         if (tagMatch && journalNameMatch && subSpecialtyMatch && productMatch && authorMatch) {
             tr[i].style.display = "";
         } else {
@@ -51,13 +51,13 @@ function applyFilters() {
     updateResultsCount();
 }
 
-function searchByField(fieldId, columnIdx) {
+function searchByField(fieldId) {
     const input = document.getElementById(fieldId);
     filters[fieldId] = input.value.toLowerCase();
     applyFilters();
 }
 
-function filterByDropdown(fieldId, columnIdx) {
+function filterByDropdown(fieldId) {
     const dropdown = document.getElementById(fieldId);
     filters[fieldId] = dropdown.value.toLowerCase();
     applyFilters();
@@ -82,3 +82,10 @@ function clearFilters() {
 
     applyFilters();
 }
+
+// Add event listeners to trigger filtering
+document.getElementById('tagSearch').addEventListener('input', () => searchByField('tagSearch'));
+document.getElementById('journalNameSearch').addEventListener('input', () => searchByField('journalNameSearch'));
+document.getElementById('subSpecialty').addEventListener('change', () => filterByDropdown('subSpecialty'));
+document.getElementById('productDropdown').addEventListener('change', () => filterByDropdown('productDropdown'));
+document.getElementById('authorDropdown').addEventListener('change', () => filterByDropdown('authorDropdown'));
