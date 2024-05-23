@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Test CND Scientific Publications</title>
+<link rel="icon" href="https://cndlifesciences.com/wp-content/uploads/2021/02/cropped-android-chrome-512x512-1-32x32.png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+<body>
+<script src="script.js"></script>
+
+
+<h1>Scientific Publication Library</h1>
+
+<div class="filter-box">
+    <label for="journalNameSearch">Search by Publication Name:</label>
+    <input type="text" id="journalNameSearch" onkeyup="searchByField('journalNameSearch', 0)" placeholder="Type to search..."> <br> <br>
+
+    <label for="tagSearch">Search by Content Tag:</label>
+    <input type="text" id="tagSearch" onkeyup="searchByField('tagSearch', 2)" placeholder="Type to search..."> <br> <br>
+
+    <label for="subSpecialty">Filter by Physician Sub-Specialty:</label>
+    <select id="subSpecialty" name="subSpecialty" onchange="filterByDropdown('subSpecialty', 3)">
+        <option value="">Show All</option>
+        <option value="Movement Disorders">Movement Disorders</option>
+        <option value="Geriatric Neurology">Geriatric Neurology</option>
+        <option value="Autonomic Disorders">Autonomic Disorders</option>
+        <option value="Neuromuscular Disorders">Neuromuscular Disorders</option>
+        <option value="Sleep Specialists">Sleep Specialists</option>
+    </select> <br><br>
+
+    <label for="productDropdown">Filter by Related Product:</label>
+    <select id="productDropdown" onchange="filterByDropdown('productDropdown', 4)">
+        <option value="">Show All</option>
+        <option value="Syn-One Test">Syn-One Test</option>
+        <option value="Small-Fiber Dx">Small-Fiber Dx</option>
+	<option value="Aut-One">Aut-One</option>
+    </select> <br><br>
+
+    <label for="authorDropdown">Filter by Author:</label>
+    <select id="authorDropdown" onchange="filterByDropdown('authorDropdown', 5)">
+        <option value="">Show All</option>
+        <option value="CND Founder">CND Founder</option>
+        <option value="3rd Party">3rd Party</option>
+    </select> <br> <br>
+
+    <button onclick="clearFilters()">Clear Filters</button><br><br>
+    <div class="results-count" id="resultsCount">Results Found: 46</div>
+</div>
+
+<table id="referencesTable">
+    <thead>
+        <tr>
+            <th>Publication Name</th>
+            <th>URL</th>
+            <th>Content Tags</th>
+            <th>Neurology Sub-Specialty</th>
+            <th>Related Product</th>
+            <th>Author</th>
+            <th>Publication Reference</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td onclick="makeEditable(this)">Synuclein-One study: skin biopsy detection of phosphorylated α -synuclein for diagnosis of synucleinopathies</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/35272481/" target="_blank" >https://pubmed.ncbi.nlm.nih.gov/35272481/</a></td>
+            <td onclick="makeEditable(this)">Multiple system atrophy (MSA), Parkinson’s disease (PD), alpha-synuclein, synucleinopathies</td>
+            <td onclick="makeEditable(this)">Geriatric Neurology, Autonomic Disorders, Neuromuscular Disorders</td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">CND Founder</td>
+            <td onclick="makeEditable(this)">Gibbons CH, Freeman R, Bellaire B, Adler CH, Moore D, Levine T. Synuclein-One study: skin biopsy detection of phosphorylated α -synuclein for diagnosis of synucleinopathies.<i>Biomark Med.</i>  2022;16(7):499-509. doi:10.2217/bmm-2021-0646</td>
+        </tr>
+        <tr>
+            <td onclick="makeEditable(this)"><i>X-linked dystonia-parkinsonism ("Lubag") may present with peripheral synucleinopathy</i></td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/34582053/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/34582053/</a></td>
+            <td onclick="makeEditable(this)">dystonia parkinsonism, dystonic disorders, synucleionapthies</td>
+            <td onclick="makeEditable(this)">Neuromuscular Disorders</td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">CND Founder</td>
+            <td onclick="makeEditable(this)">Evidente VGH, Evidente DH, Ortega SC, Levine TD, Freeman R, Gibbons CH. X-linked dystonia-parkinsonism ("Lubag") may present with peripheral synucleinopathy. <i>Mov Disord. </i>2022;37(1):130-136. doi:10.1002/mds.28801</td>
+        </tr>
+        <tr>
+            <td onclick="makeEditable(this)">Cutaneous alpha-synuclein deposition in postural tachycardia patients</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/33764697/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33764697/</a></td>
+            <td onclick="makeEditable(this)">Phosporylation, Postural Orthostatic Tachycardia Syndrome, alpha-synuclein, synucleinopathies</td>
+            <td onclick="makeEditable(this)"></td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">CND Founder</td>
+            <td onclick="makeEditable(this)">Levine TD, Bellaire B, Gibbons C, Freeman R. Cutaneous alpha-synuclein deposition in postural tachycardia patients.<i>Ann Clin Transl Neurol. </i> 2021;8(4):908-917. doi:10.1002/acn3.51347</td>
+        </tr>
+        <tr>
+            <td onclick="makeEditable(this)">Consistent skin alpha-synuclein positivity in REM sleep behavior disorder - A two center two-to-four-year follow-up study</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/33895068/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33895068/</a></td>
+            <td onclick="makeEditable(this)">Parkinson’s disease (PD), prodromal symptoms, REM sleep behavior disorder (RBD), alpha-synculein, synucleinopathies, Lewy Body disease (LBD)</td>
+            <td onclick="makeEditable(this)"></td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">3rd Party</td>
+            <td onclick="makeEditable(this)">Doppler K, Antelmi E, Kuzkina A, et al. Consistent skin alpha-synuclein positivity in REM sleep behavior disorder - A two center two-to-four-year follow-up study. <i>Parkinsonism Relat Disord.</i> 2021;86:108-113.</td>
+        </tr>
+        <tr>
+            <td onclick="makeEditable(this)">Cutaneous -synuclein is correlated with autonomic impairment in isolated rapid eye movement sleep behavior disorder</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/34244806/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/34244806/</a></td>
+            <td onclick="makeEditable(this)">Autonomic Nervous System, Parkinson’s disease (PD), Primary dysautonomias, REM sleep behavior disorder (RBD), alpha-synuclein</td>
+            <td onclick="makeEditable(this)"></td>
+            <td onclick="makeEditable(this)"></td>
+            <td onclick="makeEditable(this)">3rd Party</td>
+            <td onclick="makeEditable(this)">Miglis MG, Zitser J, Schneider L, et al. Cutaneous -synuclein is correlated with autonomic impairment in isolated rapid eye movement sleep behavior disorder. <i>Sleep.</i> 2021;44(12):zsab172. doi:10.1093/sleep/zsab172</td>
+        </tr>
+ <tr>
+            <td onclick="makeEditable(this)">Skin biopsy in evaluation of autonomic disorders</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/31996629/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/31996629//</a></td>
+            <td onclick="makeEditable(this)">Autonomic Nervous System Diseases, Central Nervous System Diseases </td>
+            <td onclick="makeEditable(this)"></td>
+            <td onclick="makeEditable(this)"></td>
+            <td onclick="makeEditable(this)">CND Founder</td>
+            <td onclick="makeEditable(this)">Gibbons CH, Wang N, Kim JY, Campagnolo M, Freeman R. Skin biopsy in evaluation of autonomic disorders.<i>Continuum (Minneap Minn).</i> 2020;26(1):200-212. doi:10.1212/CON.0000000000000814 </td>
+        </tr>
+ <tr>
+            <td onclick="makeEditable(this)">Phosphorylated alpha-synuclein within cutaneous autonomic nerves of patients with Parkinson's disease: the implications of sample thickness on results</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/31996629/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/31996629//</a></td>
+            <td onclick="makeEditable(this)">Autonomic Pathways, Parkinson’s disease (PD), phosphorylation, alpha-synuclein  </td>
+            <td onclick="makeEditable(this)"></td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">CND Founder</td>
+            <td onclick="makeEditable(this)">Wang N, Garcia J, Freeman R, Gibbons CH. Phosphorylated alpha-synuclein within cutaneous autonomic nerves of patients with Parkinson's disease: the implications of sample thickness on results.<i>J Histochem Cytochem.</i>2020;68(10):669-678. doi:10.1369/0022155420960250  </td>
+        </tr>
+ <tr>
+            <td onclick="makeEditable(this)">Alpha-synuclein in skin nerve fibers as a biomarker for alpha-synucleinopathies</td>
+            <td onclick="makeEditable(this)"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6444158/ " target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6444158/</a></td>
+            <td onclick="makeEditable(this)">alpha-synuclein, Parkinsons’s disease (PD), Lewy bodies, multiple system atrophy (MSA), pure autonomic failure (PAF), synucleinopathies, autonomic and somatosensory fibers, phosphorylated alpha-synuclein </td>
+            <td onclick="makeEditable(this)">Movement Disorders</td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">CND Founder</td>
+            <td onclick="makeEditable(this)">Kim JY, Illigens BM, McCormick MP, Wang N, Gibbons CH. Alpha-synuclein in skin nerve fibers as a biomarker for alpha-synucleinopathies.<i>J Clin Neurol.</i>2019;15(2):135-142. doi:10.3988/jcn.2019.15.2.135   </td>
+        </tr>
+<tr>
+            <td onclick="makeEditable(this)">Association of innervation-adjusted alpha-synuclein in arrector pili muscles with cardiac noradrenergic deficiency in autonomic synucleinopathies</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/31673840/" target="_blank" >https://pubmed.ncbi.nlm.nih.gov/31673840/ </a></td>
+            <td onclick="makeEditable(this)">Multiple system atrophy (MSA), neurogenic orthostatic hypotension (nOh), alpha-synuclein, arrector pili muscles, 18F- Dopamine PET </td>
+            <td onclick="makeEditable(this)">Autonomic Disorders, Movement Disorders</td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">CND Founder</td>
+            <td onclick="makeEditable(this)">Isonaka R, Gibbons CH, Wang N, Freeman R, Goldstein DS. Association of innervation-adjusted alpha-synuclein in arrector pili muscles with cardiac noradrenergic deficiency in autonomic synucleinopathies.<i>Clin Auton Res.</i>2019;29(6):587-593. doi:10.1007/s10286-019-00644-6   </td>
+        </tr>
+
+<tr>
+            <td onclick="makeEditable(this)">Abnormal α-synuclein deposits in skin nerves: intra-and inter-laboratory reproducibility</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/30770596/  " target="_blank">https://pubmed.ncbi.nlm.nih.gov/30770596/ </a></td>
+            <td onclick="makeEditable(this)">Parkinson’s disease (PD), REM sleep behavior disorder (RBD), Dementia with Lewy Bodies (DLB), multiple system atrophy (MSA), skin biopsy, phosphorylated alpha-synuclein, Protein Gene Product 9.5 (PGP 9.5) </td>
+            <td onclick="makeEditable(this)">Movement Disorders</td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">3rd Party</td>
+            <td onclick="makeEditable(this)">Donadio V, Doppler K, Incensi A, et al. Abnormal α-synuclein deposits in skin nerves: intra-and inter-laboratory reproducibility.<i>Eur J Neurol.</i> 2019;26(10):1245-1251. doi:10.1111/ene.13939 </td>
+        </tr>
+
+<tr>
+            <td onclick="makeEditable(this)">Skin nerve alpha-synuclein deposits in Parkinson's disease and other synucleinopathies: a review</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/30506233/  "target="_blank">https://pubmed.ncbi.nlm.nih.gov/30506233/ </a></td>
+            <td onclick="makeEditable(this)">Pure autonomic failure (PAF), autonomic failure, synucleinopathies, skin biopsy, autonomic nerves, indirect immunofluorescence, alpha-synculein </td>
+            <td onclick="makeEditable(this)">Movement Disorders, Autonomic Disorders</td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">3rd Party</td>
+            <td onclick="makeEditable(this)">Donadio V. Skin nerve alpha-synuclein deposits in Parkinson's disease and other synucleinopathies: a review.<i>Clin Auton Res.</i>2019;29(6):577-585. doi:10.1007/s10286-018-0581-4  </td>
+        </tr>
+
+<tr>
+            <td onclick="makeEditable(this)">Skin alpha-synuclein deposits differ in clinical variants of synucleinopathy: an in vivo study</td>
+            <td onclick="makeEditable(this)"><a href="https://www.nature.com/articles/s41598-018-32588-8   " target="_blank">https://www.nature.com/articles/s41598-018-32588-8 </a></td>
+            <td onclick="makeEditable(this)">synucleinopathies, multiple system atrophy (MSA), pure autonomic failure (PAF), dementia with Lewy bodies (DLB), idiopathic Parkinson’s disease, differentiation of synucleinopathies, synuclein signatures, autonomic and somatic fibers, alpha-synculein,phosphorylated alpha-synuclein (p-syn), skin biopsy </td>
+            <td onclick="makeEditable(this)">Movement Disorders, Autonomic Disorders</td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">3rd Party</td>
+            <td onclick="makeEditable(this)">Donadio V, Incensi A, El-Agnaf O, et al. Skin alpha-synuclein deposits differ in clinical variants of synucleinopathy: an in vivo study.<i>Sci Rep.</i>2018;8(1):14246. doi:10.1038/s41598-018-32588-8  </td>
+        </tr>
+
+<tr>
+            <td onclick="makeEditable(this)">Cutaneous alpha-synuclein from paraffin embedded autopsy specimens in Parkinson's disease</td>
+            <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/28582870/ " target="_blank">https://pubmed.ncbi.nlm.nih.gov/28582870/ </a></td>
+            <td onclick="makeEditable(this)">Parkinson’s disease (PD), alpha-synuclein, immunohistochemical staining, skin biopsy, paraffin embedded skin biopsy, skin biopsy </td>
+            <td onclick="makeEditable(this)">Movement Disorders, Geriatric Neurology</td>
+            <td onclick="makeEditable(this)">Syn-One Test</td>
+            <td onclick="makeEditable(this)">CND Founder</td>
+            <td onclick="makeEditable(this)">Gibbons CH, Wang N, Freeman R. Cutaneous alpha-synuclein from paraffin embedded autopsy specimens in Parkinson's disease.<i>J Parkinsons Dis.</i>2017;7(3):503-509. doi:10.3233/JPD-171088  </td>
+        </tr>
+
+<tr>
+  <td onclick="makeEditable(this)">A new potential biomarker for dementia with Lewy bodies: Skin nerve alpha-synuclein deposits</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/28667178/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28667178/</a></td>
+  <td onclick="makeEditable(this)">dementia with Lewy bodies (DLB), small fiber neuropathy (SFN), phosphorylated alpha-synuclein, autonomic dysfunction, skin biopsy</td>
+  <td onclick="makeEditable(this)">Cognitive Disorders, Movement Disorders, Geriatric Neurology</td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx, Syn-One Test</td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Donadio V, Incensi A, Rizzo G, et al. A new potential biomarker for dementia with Lewy bodies: Skin nerve alpha-synuclein deposits.<i>Neurology.</i>2017;89(4):318-326. doi:10.1212/WNL.0000000000004146</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Skin nerve phosphorylated alpha-synuclein deposits in idiopathic REM sleep behavior disorder</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/28468843/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28468843/</a></td>
+  <td onclick="makeEditable(this)">REM sleep behavior disorder (RBD), idiopathic REM sleep behavior disorder, synucleinopathy, skin biopsy, neuroimaging</td>
+  <td onclick="makeEditable(this)">Sleep Specialists, Movement Disorders</td>
+  <td onclick="makeEditable(this)">Syn-One Test</td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Antelmi E, Donadio V, Incensi A, Plazzi G, Liguori R. Skin nerve phosphorylated alpha-synuclein deposits in idiopathic REM sleep behavior disorder.<i>Neurology.</i> 2017;88(22):2128-2131. doi:10.1212/WNL.0000000000003989</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">The diagnostic discrimination of cutaneous alpha-synuclein deposition in Parkinson disease</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/27385742/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/27385742/</a></td>
+  <td onclick="makeEditable(this)">autonomic dysfunction, parkinson’s disease (PD), disease stages and duration, skin biopsy, pilomotor and sudomotor nerve fibers</td>
+  <td onclick="makeEditable(this)">Movement Disorders</td>
+  <td onclick="makeEditable(this)">Syn-One Test</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Gibbons CH, Garcia J, Wang N, Shih LC, Freeman R. The diagnostic discrimination of cutaneous alpha-synuclein deposition in Parkinson disease.<i>Neurology.</i>2016;87(5):505-512. doi:10.1212/WNL.0000000000002919</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Skin nerve misfolded alpha-synuclein in pure autonomic failure and Parkinson disease</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/26606657/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/26606657/</a></td>
+  <td onclick="makeEditable(this)">pure autonomic failure (PAF), idiopathic Parkinson’s disease, intraneuronal p-syn, alpha-synuclein, skin biopsy</td>
+  <td onclick="makeEditable(this)">Movement Disorders, Autonomic Disorders</td>
+  <td onclick="makeEditable(this)">Syn-One Test</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Donadio V, Incensi A, Piccinini C, et al. Skin nerve misfolded alpha-synuclein in pure autonomic failure and Parkinson disease.<i>Ann Neurol.</i> 2016;79(2):306-316. doi:10.1002/ana.24567</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">alpha-synuclein in cutaneous autonomic nerves</td>
+  <td onclick="makeEditable(this)"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3806913/" target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3806913/</a></td>
+  <td onclick="makeEditable(this)">nerve fiber density, Parkinson’s disease (PD), alpha-synuclein, skin biopsy, autonomic nerve fibers, cutaneous autonomic innervation, autonomic dysfunction, neurodegenerative diseases, Lewy bodies</td>
+  <td onclick="makeEditable(this)">Movement Disorders, Neuromuscular Disorders, Autonomic Disorders</td>
+  <td onclick="makeEditable(this)">Syn-One Test</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Wang N, Gibbons CH, Lafo J, Freeman R. alpha-synuclein in cutaneous autonomic nerves.<i>Neurology. </i>2013;81(18):1604-1610. doi:10.1212/WNL.0b013e3182a9f449</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Skin sympathetic fiber alpha-synuclein deposits: A potential biomarker for pure autonomic failure</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/23390175/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/23390175/</a></td>
+  <td onclick="makeEditable(this)">Pure Autonomic Failure (PAF), peripheral autonomic neuropathy, skin biopsy, sympathetic nerve fibers, alpha-synuclein, degenerative vs. Acquired neuropathy, autonomic dysfunction</td>
+  <td onclick="makeEditable(this)">Autonomic Disorders, Movement Disorders</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Donadio V, Incensi A, Cortelli P, et al. Skin sympathetic fiber alpha-synuclein deposits: A potential biomarker for pure autonomic failure. <i>Neurology</i> 2013;80:725-732</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Skin Nerve Phosphorylated alpha-Synuclein Deposits in Parkinson Disease With Orthostatic Hypotension</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/30137426/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/30137426/</a></td>
+  <td onclick="makeEditable(this)">phosphorylated alpha-synuclein, Parkinson’s disease (PD), orthostatic hypotension, skin biopsy, autonomic nerves</td>
+  <td onclick="makeEditable(this)">Movement Disorders, Autonomic Disorders</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Donadio V, Incensi A, Del Sorbo F, et al. Skin Nerve Phosphorylated alpha-Synuclein Deposits in Parkinson Disease With Orthostatic Hypotension.<i>Journal of neuropathology and experimental neurology</i> 2018;77:942-949</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Dermal phospho-alpha-synuclein deposits confirm REM sleep behaviour disorder as prodromal Parkinson's disease</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/28180961/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28180961/</a></td>
+  <td onclick="makeEditable(this)">Parkinson’s disease (PD), Orthostatic Hypotension, alpha-synuclein, motor dysfunction, skin biopsy, pathogenesis, autonomic nerves, cholinergic and adrenergic fibers</td>
+  <td onclick="makeEditable(this)">Movement Disorders, Autonomic Disorders</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Doppler K, Jentschke HM, Schulmeyer L, et al. Dermal phospho-alpha-synuclein deposits confirm REM sleep behaviour disorder as prodromal Parkinson's disease.<i>Acta Neuropathol</i> 2017;133:535-545</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Dermal Phospho-Alpha-Synuclein Deposition in Patients With Parkinson's Disease and Mutation of the Glucocerebrosidase Gene</td>
+  <td onclick="makeEditable(this)"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6304446/" target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6304446/</a></td>
+  <td onclick="makeEditable(this)">GBA1 mutations, skin biopsy, dermal nerve fibers, prodromal Parkinson's disease, neurodegeneration, phosphorylated alpha-synuclein (p-syn)</td>
+  <td onclick="makeEditable(this)">Movement Disorders</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Doppler K, Brockmann K, Sedghi A, et al. Dermal Phospho-Alpha-Synuclein Deposition in Patients With Parkinson's Disease and Mutation of the Glucocerebrosidase Gene. <i>Front Neurol</i>2018;9:1094</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Distinctive Distribution of phospho-alpha-synuclein in dermal nerves in multiple system atrophy</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/26175301/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/26175301/</a></td>
+  <td onclick="makeEditable(this)">Multiple System Atrophy (MSA), phosphorylated alpha-synuclein (p-syn), dermal nerves, somatosensory fibers, skin biopsy, autonomic fibers</td>
+  <td onclick="makeEditable(this)">movement Disorders</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Doppler K, Weis J, Karl K, et al. Distinctive Distribution of phospho-alpha-synuclein in dermal nerves in multiple system atrophy.<i>Movement disorders: official journal of the Movement Disorder Society</i> 2015</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">The aggregation state of alpha-synuclein deposits in dermal nerve fibers of patients with Parkinson's disease resembles that in the brain</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/30902527/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/30902527/</a></td>
+  <td onclick="makeEditable(this)">phosphorylated alpha-synuclein, dermal nerve fibers, Parkinson’s disease (PD), multiple system atrophy-parkinsonism, proteinase K (PK) resistance, conformation-specific antibodies</td>
+  <td onclick="makeEditable(this)">Movement Disorders</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Kuzkina A, Schulmeyer L, Monoranu CM, Volkmann J, Sommer C, Doppler K. The aggregation state of alpha-synuclein deposits in dermal nerve fibers of patients with Parkinson's disease resembles that in the brain. <i>Parkinsonism & related disorders</i> 2019</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Skin biopsies in the assessment of the autonomic nervous system</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/24095140/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/24095140/</a></td>
+  <td onclick="makeEditable(this)">skin biopsy, cutaneous autonomic innervation, nociceptive C fibers, small-fiber neuropathy (SFN), peripheral adrenergic and cholinergic fibers</td>
+  <td onclick="makeEditable(this)">Movement Disorders</td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Wang N, Gibbons CH. Skin biopsies in the assessment of the autonomic nervous system. <i>Handbook of clinical neurology</i> 2013;117:371-378</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Skin nerve alpha-synuclein deposits: A biomarker for idiopathic Parkinson disease</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/24634456/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/24634456/</a></td>
+  <td onclick="makeEditable(this)">phosphorylated alpha-synuclein, idiopathic Parkinson’s disease (IPD), skin biopsy, Small-fiber neuropathy (SFN), parkinsonisms</td>
+  <td onclick="makeEditable(this)">Movement Disorders, Neuromuscular Specialists</td>
+  <td onclick="makeEditable(this)">Syn-One Test, Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Donadio V, Incensi A, Leta V, et al. Skin nerve alpha-synuclein deposits: A biomarker for idiopathic Parkinson disease.<i>Neurology</i> 2014;82:1362-1369</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Utility of skin biopsy in management of small fiber neuropathy</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/23553795/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/23553795/</a></td>
+  <td onclick="makeEditable(this)">small-fiber neuropathy (SFN), skin biopsy, change in management</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Boruchow SA, Gibbons CH. Utility of skin biopsy in management of small fiber neuropathy. <i>Muscle Nerve</i> 2013;48:877-882</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Usefulness of skin biopsies in the evaluation and management of patients with suspected small fiber neuropathy</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/22947232/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22947232/</a></td>
+  <td onclick="makeEditable(this)">small fiber neuropathy (SFN), skin biopsy, nerve conduction studies</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Saperstein DS, Levine TD, Levine M, Hank N. Usefulness of skin biopsies in the evaluation and management of patients with suspected small fiber neuropathy. <i>The International journal of neuroscience</i> 2013;123:38-41</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Routine use of punch biopsy to diagnose small fiber neuropathy in fibromyalgia patients</td>
+  <td onclick="makeEditable(this)"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4348533/" target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4348533/</a></td>
+  <td onclick="makeEditable(this)">Fibromyalgia (FM), Small-fiber neuropathy (SFN), skin biopsy, pathological evidence</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Levine TD, Saperstein DS. Routine use of punch biopsy to diagnose small fiber neuropathy in fibromyalgia patients. <i>Clinical rheumatology</i> 2015;34:413-417</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">The REM sleep behavior disorder screening questionnaire--a new diagnostic instrument</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/17894337/"target="_blank">https://pubmed.ncbi.nlm.nih.gov/17894337/</a></td>
+  <td onclick="makeEditable(this)">REM Sleep Behavior Disorder (RBD), Polysomnography (PSG), synucleinopathies, screening questionnaire</td>
+  <td onclick="makeEditable(this)">Sleep Specialists, Geriatric Neurology</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Stiasny-Kolster K, Mayer G, Schafer S, Moller JC, Heinzel-Gutenbrunner M, Oertel WH. The REM sleep behavior disorder screening questionnaire--a new diagnostic instrument.<i>Movement disorders: official journal of the Movement Disorder Society </i>2007;22:2386-2393</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">The utility of skin biopsy for prediction of progression in suspected small fiber neuropathy</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/16434668/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/16434668/</a></td>
+  <td onclick="makeEditable(this)">small-fiber neuropathy (SFN), skin biopsy, epidermal nerve fiber density, paresthesia's</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Gibbons CH, Griffin JW, Polydefkis M, et al. The utility of skin biopsy for prediction of progression in suspected small fiber neuropathy.<i>Neurology</i>  2006;66:256-258</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Capsaicin induces degeneration of cutaneous autonomic nerve fibers</td>
+  <td onclick="makeEditable(this)"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3057686/" target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3057686/</a></td>
+  <td onclick="makeEditable(this)">Capsaicin, Autonomic neuropathy, nerve degeneration, sensory function, nerve fibers</td>
+  <td onclick="makeEditable(this)">Autonomic Disorders</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Gibbons CH, Wang N, Freeman R. Capsaicin induces degeneration of cutaneous autonomic nerve fibers. <i>Annals of neurology</i> 2010;68:888-898</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Novel immunohistochemical techniques using discrete signal amplification systems for human cutaneous peripheral nerve fiber imaging</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/21411809/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/21411809/</a></td>
+  <td onclick="makeEditable(this)">Peripheral Nerve Fibers, Confocal Imaging, Signal Amplification systems</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Wang N, Gibbons CH, Freeman R. Novel immunohistochemical techniques using discrete signal amplification systems for human cutaneous peripheral nerve fiber imaging. <i>The journal of histochemistry and cytochemistry: official journal of the Histochemistry Society</i>2011;59:382-390</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Clinical Utility of Skin Biopsy in Differentiating between Parkinson's Disease and Multiple System Atrophy</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/25945280/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/25945280/</a></td>
+  <td onclick="makeEditable(this)">Parkinson’s Disease (PD), Multiple System Atrophy (MSA), skin biopsy, Intraepidermal Nerve Fiber Density (IENFD)</td>
+  <td onclick="makeEditable(this)">Movement Disorders</td>
+  <td onclick="makeEditable(this)">Syn-One Test</td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Haga R, Sugimoto K, Nishijima H, et al. Clinical Utility of Skin Biopsy in Differentiating between Parkinson's Disease and Multiple System Atrophy. <i>Parkinson's disease</i>2015;2015:167038</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">An atypical clinical course of a 71-year-old man with right arm weakness and ataxia</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/35504790/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/35504790/</a></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">Syn-One Test</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Khemani, P., Elliott, M., & Levine, T. (2022). An atypical clinical course of a 71-year-old man with right arm weakness and ataxia. <i>Parkinsonism & related disorders,</i> S1353-8020(22)00043-8. Advance online publication. https://doi.org/10.1016/j.parkreldis.2022.02.010 (April 2022)</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Cutaneous Alpha-Synuclein Deposition Across the Synucleinopathies (1886)</td>
+  <td onclick="makeEditable(this)"><a href="https://n.neurology.org/content/94/15_Supplement/1886" target="_blank">https://n.neurology.org/content/94/15_Supplement/1886</a></td>
+  <td onclick="makeEditable(this)">phosphorylated alpha-synuclein, synucleinopathies, Parkinson’s disease (PD), Multiple System Atrophy (MSA), Dementia with Lewy Bodies (DLB), Pure Autonomic Failure (PAF), skin biopsies, PGP 9.5 staining</td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">Syn-One Test</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Christopher Gibbons, Ningshan Wang, Sharika Rajan, Drew Kern, Jose-Alberto Palma, Horacio Kaufmann, Roy Freeman. Cutaneous Alpha-Synuclein Deposition Across the Synucleinopathies (1886). <i>Neurology</i> Apr 2020, 94 (15 Supplement) 1886</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Presence of Skin alpha-Synuclein Deposits Discriminates Parkinson's Disease from Progressive Supranuclear Palsy and Corticobasal Syndrome</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/34864689/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/34864689/</a></td>
+  <td onclick="makeEditable(this)">Phosphorylated alpha-synuclein, progressive supranuclear palsy (PSP), corticobasal syndrome (CBS), Parkinson’s disease (PD), differential diagnosis</td>
+  <td onclick="makeEditable(this)">Movement Disorders, Neuromuscular Disorders, Cognitive Disorders</td>
+  <td onclick="makeEditable(this)">Syn-One Test</td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Giannoccaro, M. P., Avoni, P., Rizzo, G., Incensi, A., Infante, R., Donadio, V., & Liguori, R. (2022). Presence of Skin alpha-Synuclein Deposits Discriminates Parkinson's Disease from Progressive Supranuclear Palsy and Corticobasal Syndrome.<i>Journal of Parkinson's disease,</i> 12(2), 585–591. https://doi.org/10.3233/JPD-212904</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Braak's Unfinished Hypothesis: A Clinicopathological Case Report of alpha-Synuclein Peripheral Neuropathy Preceding Parkinsonism by 20 Years</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/34631951/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/34631951/</a></td>
+  <td onclick="makeEditable(this)">Alpha-synuclein aggregates, Lewy bodies, Lewy neurites, peripheral neuropathy, Braak hypothesis, dementia with Lewy bodies (DLB)</td>
+  <td onclick="makeEditable(this)">Movement Disorders, Neuromuscular Disorders, Cognitive Disorders, Geriatric Neurology</td>
+  <td onclick="makeEditable(this)">Syn-One Test</td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Donlon, E., Lynch, R., Murphy, O.C., Farrell, M., Noel, J., Keogan, M., O'Connell, M. and Lynch, T. (2021), Braak's Unfinished Hypothesis: A Clinicopathological Case Report of alpha-Synuclein Peripheral Neuropathy Preceding Parkinsonism by 20 Years. <i>Mov Disord Clin Pract,</i> 8: 1129-1133. https://doi.org/10.1002/mdc3.13321 (August 2021)</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">A multi-center, multinational age- and gender-adjusted normative dataset for immunofluorescent intraepidermal nerve fiber density at the distal leg</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/26493160/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/26493160/</a></td>
+  <td onclick="makeEditable(this)">Intraepidermal nerve fibers (IENFs), small fiber neuropathy (SFN), immunofluorescence</td>
+  <td onclick="makeEditable(this)">Neuromuscular disorders, Geriatric Neurology, Autonomic Disorders</td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Provitera, V., Gibbons, C. H., Wendelschafer-Crabb, G., Donadio, V., Vitale, D. F., Stancanelli, A., Caporaso, G., Liguori, R., Wang, N., Santoro, L., Kennedy, W. R., & Nolano, M. (2016). A multi-center, multinational age- and gender-adjusted normative dataset for immunofluorescent intraepidermal nerve fiber density at the distal leg. <i>European journal of neurology,</i> 23(2), 333–338. https://doi.org/10.1111/ene.12842</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">The role of skin biopsy in differentiating small-fiber neuropathy from ganglionopathy</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/29493845/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/29493845/</a></td>
+  <td onclick="makeEditable(this)">small fiber neuropathy (SFN), intraepidermal nerve fibers, ganglionopathy, differential diagnosis</td>
+  <td onclick="makeEditable(this)">Autonomic Disorders, Neuromuscular Disorders, Geriatric Neurology</td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Provitera, V., Gibbons, C. H., Wendelschafer-Crabb, G., Donadio, V., Vitale, D. F., Loavenbruck, A., Stancanelli, A., Caporaso, G., Liguori, R., Wang, N., Santoro, L., Kennedy, W. R., & Nolano, M. (2018). The role of skin biopsy in differentiating small-fiber neuropathy from ganglionopathy.<i> European journal of neurology, </i> 25(6), 848–853. https://doi.org/10.1111/ene.13608</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Diagnostic criteria for small fibre neuropathy in clinical practice and research</td>
+  <td onclick="makeEditable(this)"><a href="https://doi.org/10.1093/brain/awz333" target="_blank">https://doi.org/10.1093/brain/awz333</a></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Devigili, G., Rinaldo, S., Lombardi, R., Cazzato, D., Marchi, M., Salvi, E., Eleopra, R., & Lauria, G. (2019). Diagnostic criteria for small fibre neuropathy in clinical practice and research. <i>Brain : a journal of neurology,</i> 142(12), 3728–3736. https://doi.org/10.1093/brain/awz333</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Intraepidermal nerve fiber density at the distal leg: a worldwide normative reference study</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/21040142/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/21040142/</a></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">Small-Fiber Dx</td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Lauria, G., Bakkers, M., Schmitz, C., Lombardi, R., Penza, P., Devigili, G., Smith, A. G., Hsieh, S. T., Mellgren, S. I., Umapathi, T., Ziegler, D., Faber, C. G., & Merkies, I. S. (2010). Intraepidermal nerve fiber density at the distal leg: a worldwide normative reference study. <i>Journal of the peripheral nervous system : JPNS,</i> 15(3), 202–207. https://doi.org/10.1111/j.1529-8027.2010.00271.x</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Pure autonomic failure and the differential diagnosis of autonomic peripheral neuropathies</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/34392300/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/34392300/</a></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">Aut-One</td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">González-Duarte, A., Varma-Doyle, A., & Freeman, R. (2021). Pure autonomic failure and the differential diagnosis of autonomic peripheral neuropathies.<i>Current opinion in neurology,</i> 34(5), 675–682</td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">The statistical evaluation of medical tests for classification and prediction.</td>
+  <td onclick="makeEditable(this)"><a href="https://global.oup.com/academic/product/the-statistical-evaluation-of-medical-tests-for-classification-and-prediction-9780198565826?cc=us&lang=en&" target="_blank">https://global.oup.com/academic/product/the-statistical-evaluation-of-medical-tests-for-classification-and-prediction-9780198565826?cc=us&lang=en&/</a></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">3rd Party</td>
+  <td onclick="makeEditable(this)">Pepe M. The statistical evaluation of medical tests for classification and prediction.: <i>Oxford University Press., </i> 2003. </td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">Reader Response: In Vivo Distribution of a-synuclein in Multiple Tissues and Biofluids in Parkinson's Disease</td>
+  <td onclick="makeEditable(this)"><a href="https://www.neurology.org/doi/10.1212/WNL.0000000000011941" target="_blank">https://www.neurology.org/doi/10.1212/WNL.0000000000011941</a></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Gibbons, C., Donadio, V., Sommer, C., Liguori, R., Lauria Pinter, G., Lombardi, R., Doppler, K., & Freeman, R. (2021). Reader Response: In Vivo Distribution of alpha-Synuclein in Multiple Tissues and Biofluids in Parkinson Disease.<i>Neurology,</i> 96(20), 964–965. https://www.neurology.org/doi/10.1212/WNL.0000000000011941  (May 2021)  </td>
+</tr>
+
+<tr>
+  <td onclick="makeEditable(this)">In Vivo Diagnosis of Synucleinopathies: A Comparative Study of Skin Biopsy and RT-QuIC</td>
+  <td onclick="makeEditable(this)"><a href="https://pubmed.ncbi.nlm.nih.gov/35379763/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/35379763/</a></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)"></td>
+  <td onclick="makeEditable(this)">CND Founder</td>
+  <td onclick="makeEditable(this)">Donadio, V., Wang, Z., Incensi, A., Rizzo, G., Fileccia, E., Vacchiano, V., Capellari, S., Magnani, M., Scaglione, C., Stanzani Maserati, M., Avoni, P., Liguori, R., & Zou, W. (2021). In Vivo Diagnosis of Synucleinopathies: A Comparative Study of Skin Biopsy and RT-QuIC.<i>Neurology,</i> 96(20), e2513–e2524. https://doi.org/10.1212/WNL.0000000000011935 (May 2021)  </td>
+</tr>
+
+
+
+
+        <!-- Add additional rows for each of your journals in a similar format -->
+    </tbody>
+</table>
+
+<script src="scripts.js"></script>
+</body>
+</html>

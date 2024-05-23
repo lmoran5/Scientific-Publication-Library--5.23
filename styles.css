@@ -1,0 +1,54 @@
+body, table {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1    {
+
+color: #13274E;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    font-size: 12px;
+    color: #13274E;
+}
+
+tr:hover {
+    background-color: #ddd; /* Light grey background on row hover for better interactivity */
+}
+
+th {
+    background-color: #13274E;
+    font-size: 13px;
+    color: #FFFFFF; 
+
+}
+
+.results-count {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #ddd;
+    color: #13274E;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+/* Italicize text in the first and seventh columns */
+td:nth-child(1) {
+    font-style: italic;
+
+}
