@@ -12,7 +12,7 @@ let filters = {
 };
 
 function normalizeText(text) {
-    return text.toLowerCase().replace(/'/g, "");
+    return text.toLowerCase().replace(/'/g, "").replace(/-/g,"");
 }
 
 function updateResultsCount() {
