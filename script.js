@@ -11,6 +11,10 @@ let filters = {
     authorDropdown: ''
 };
 
+function normalizeText(text) {
+    return text.toLowerCase().replace(/'/g, "");
+}
+
 function updateResultsCount() {
     const table = document.getElementById("referencesTable");
     const tr = table.getElementsByTagName("tr");
@@ -35,11 +39,11 @@ function applyFilters() {
         const tdProduct = tr[i].getElementsByTagName("td")[4];
         const tdAuthor = tr[i].getElementsByTagName("td")[5];
 
-        const tagMatch = !filters.tagSearch || (tdTag && tdTag.textContent.toLowerCase().includes(filters.tagSearch));
-        const journalNameMatch = !filters.journalNameSearch || (tdJournalName && tdJournalName.textContent.toLowerCase().includes(filters.journalNameSearch));
-        const subSpecialtyMatch = !filters.subSpecialty || (tdSubSpecialty && tdSubSpecialty.textContent.toLowerCase().includes(filters.subSpecialty));
-        const productMatch = !filters.productDropdown || (tdProduct && tdProduct.textContent.toLowerCase().includes(filters.productDropdown));
-        const authorMatch = !filters.authorDropdown || (tdAuthor && tdAuthor.textContent.toLowerCase().includes(filters.authorDropdown));
+        const tagMatch = !filters.tagSearch || (tdTag && normalizeText(tdTag.textContent).includes(normalizeText(filters.tagSearch)));
+        const journalNameMatch = !filters.journalNameSearch || (tdJournalName && normalizeText(tdJournalName.textContent).includes(normalizeText(filters.journalNameSearch)));
+        const subSpecialtyMatch = !filters.subSpecialty || (tdSubSpecialty && normalizeText(tdSubSpecialty.textContent).includes(normalizeText(filters.subSpecialty)));
+        const productMatch = !filters.productDropdown || (tdProduct && normalizeText(tdProduct.textContent).includes(normalizeText(filters.productDropdown)));
+        const authorMatch = !filters.authorDropdown || (tdAuthor && normalizeText(tdAuthor.textContent).includes(normalizeText(filters.authorDropdown)));
 
         if (tagMatch && journalNameMatch && subSpecialtyMatch && productMatch && authorMatch) {
             tr[i].style.display = "";
