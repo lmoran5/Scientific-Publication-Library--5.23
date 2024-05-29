@@ -46,9 +46,3 @@ button {
     margin-top: 10px;
 }
 
-
-/* Italicize text in the first and seventh columns */
-td:nth-child(1) {
-    font-style: italic;
-
-}
