@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let filters = {
-    tagSearch: '',
     journalNameSearch: '',
+    articleTitleSearch: '',
+    authorSearch: '',
     subSpecialty: '',
-    productDropdown: '',
-    authorDropdown: ''
+    productDropdown: ''
 };
 
 function normalizeText(text) {
@@ -33,19 +33,19 @@ function applyFilters() {
     const tr = table.getElementsByTagName("tr");
 
     for (let i = 1; i < tr.length; i++) {
-        const tdTag = tr[i].getElementsByTagName("td")[2];
         const tdJournalName = tr[i].getElementsByTagName("td")[0];
-        const tdSubSpecialty = tr[i].getElementsByTagName("td")[3];
-        const tdProduct = tr[i].getElementsByTagName("td")[4];
-        const tdAuthor = tr[i].getElementsByTagName("td")[5];
+        const tdArticleTitle = tr[i].getElementsByTagName("td")[1];
+        const tdSubSpecialty = tr[i].getElementsByTagName("td")[4];
+        const tdProduct = tr[i].getElementsByTagName("td")[5];
+        const tdAuthor = tr[i].getElementsByTagName("td")[6];
 
-        const tagMatch = !filters.tagSearch || (tdTag && normalizeText(tdTag.textContent).includes(normalizeText(filters.tagSearch)));
         const journalNameMatch = !filters.journalNameSearch || (tdJournalName && normalizeText(tdJournalName.textContent).includes(normalizeText(filters.journalNameSearch)));
+        const articleTitleMatch = !filters.articleTitleSearch || (tdArticleTitle && normalizeText(tdArticleTitle.textContent).includes(normalizeText(filters.articleTitleSearch)));
         const subSpecialtyMatch = !filters.subSpecialty || (tdSubSpecialty && normalizeText(tdSubSpecialty.textContent).includes(normalizeText(filters.subSpecialty)));
         const productMatch = !filters.productDropdown || (tdProduct && normalizeText(tdProduct.textContent).includes(normalizeText(filters.productDropdown)));
-        const authorMatch = !filters.authorDropdown || (tdAuthor && normalizeText(tdAuthor.textContent).includes(normalizeText(filters.authorDropdown)));
+        const authorMatch = !filters.authorSearch || (tdAuthor && normalizeText(tdAuthor.textContent).includes(normalizeText(filters.authorSearch)));
 
-        if (tagMatch && journalNameMatch && subSpecialtyMatch && productMatch && authorMatch) {
+        if (journalNameMatch && articleTitleMatch && subSpecialtyMatch && productMatch && authorMatch) {
             tr[i].style.display = "";
         } else {
             tr[i].style.display = "none";
@@ -55,13 +55,13 @@ function applyFilters() {
     updateResultsCount();
 }
 
-function searchByField(fieldId) {
+function searchByField(fieldId, columnIndex) {
     const input = document.getElementById(fieldId);
     filters[fieldId] = input.value.toLowerCase();
     applyFilters();
 }
 
-function filterByDropdown(fieldId) {
+function filterByDropdown(fieldId, columnIndex) {
     const dropdown = document.getElementById(fieldId);
     filters[fieldId] = dropdown.value.toLowerCase();
     applyFilters();
@@ -69,27 +69,27 @@ function filterByDropdown(fieldId) {
 
 function clearFilters() {
     // Reset all filters
-    document.getElementById('tagSearch').value = '';
     document.getElementById('journalNameSearch').value = '';
+    document.getElementById('articleTitleSearch').value = '';
+    document.getElementById('authorSearch').value = '';
     document.getElementById('subSpecialty').selectedIndex = 0;
     document.getElementById('productDropdown').selectedIndex = 0;
-    document.getElementById('authorDropdown').selectedIndex = 0;
 
     // Clear filter values
     filters = {
-        tagSearch: '',
         journalNameSearch: '',
+        articleTitleSearch: '',
+        authorSearch: '',
         subSpecialty: '',
-        productDropdown: '',
-        authorDropdown: ''
+        productDropdown: ''
     };
 
     applyFilters();
 }
 
 // Add event listeners to trigger filtering
-document.getElementById('tagSearch').addEventListener('input', () => searchByField('tagSearch'));
-document.getElementById('journalNameSearch').addEventListener('input', () => searchByField('journalNameSearch'));
-document.getElementById('subSpecialty').addEventListener('change', () => filterByDropdown('subSpecialty'));
-document.getElementById('productDropdown').addEventListener('change', () => filterByDropdown('productDropdown'));
-document.getElementById('authorDropdown').addEventListener('change', () => filterByDropdown('authorDropdown'));
+document.getElementById('journalNameSearch').addEventListener('input', () => searchByField('journalNameSearch', 0));
+document.getElementById('articleTitleSearch').addEventListener('input', () => searchByField('articleTitleSearch', 1));
+document.getElementById('authorSearch').addEventListener('input', () => searchByField('authorSearch', 6));
+document.getElementById('subSpecialty').addEventListener('change', () => filterByDropdown('subSpecialty', 4));
+document.getElementById('productDropdown').addEventListener('change', () => filterByDropdown('productDropdown', 5));
