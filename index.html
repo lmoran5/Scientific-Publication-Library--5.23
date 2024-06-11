@@ -22,11 +22,14 @@
     <label for="journalNameSearch">Search by Publication Name:</label>
     <input type="text" id="journalNameSearch" onkeyup="searchByField('journalNameSearch', 0)" placeholder="Type to search..."> <br> <br>
 
+    <label for="articleTitleSearch">Search by Article Title:</label>
+    <input type="text" id="articleTitleSearch" onkeyup="searchByField('articleTitleSearch', 1)" placeholder="Type to search..."> <br> <br>
+
     <label for="tagSearch">Search by Content Tag:</label>
-    <input type="text" id="tagSearch" onkeyup="searchByField('tagSearch', 2)" placeholder="Type to search..."> <br> <br>
+    <input type="text" id="tagSearch" onkeyup="searchByField('tagSearch', 3)" placeholder="Type to search..."> <br> <br>
 
     <label for="subSpecialty">Filter by Physician Sub-Specialty:</label>
-    <select id="subSpecialty" name="subSpecialty" onchange="filterByDropdown('subSpecialty', 3)">
+    <select id="subSpecialty" name="subSpecialty" onchange="filterByDropdown('subSpecialty', 4)">
         <option value="">Show All</option>
         <option value="Movement Disorders">Movement Disorders</option>
         <option value="Geriatric Neurology">Geriatric Neurology</option>
@@ -36,23 +39,20 @@
     </select> <br><br>
 
     <label for="productDropdown">Filter by Related Product:</label>
-    <select id="productDropdown" onchange="filterByDropdown('productDropdown', 4)">
+    <select id="productDropdown" onchange="filterByDropdown('productDropdown', 5)">
         <option value="">Show All</option>
         <option value="Syn-One Test">Syn-One Test</option>
         <option value="Small-Fiber Dx">Small-Fiber Dx</option>
-	<option value="Aut-One">Aut-One</option>
+        <option value="Aut-One">Aut-One</option>
     </select> <br><br>
 
-    <label for="authorDropdown">Filter by Author:</label>
-    <select id="authorDropdown" onchange="filterByDropdown('authorDropdown', 5)">
-        <option value="">Show All</option>
-        <option value="CND Founder">CND Founder</option>
-        <option value="3rd Party">3rd Party</option>
-    </select> <br> <br>
+    <label for="authorSearch">Search by Author:</label>
+    <input type="text" id="authorSearch" onkeyup="searchByField('authorSearch', 6)" placeholder="Type to search..."> <br> <br>
 
     <button onclick="clearFilters()">Clear Filters</button><br><br>
     <div class="results-count" id="resultsCount">Results Found: 84</div>
 </div>
+
 
 <table id="referencesTable">
     <thead>
