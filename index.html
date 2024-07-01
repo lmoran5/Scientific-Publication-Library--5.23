@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title> CND Scientific Publications Library</title>
-<link rel="icon" href="https://cndlifesciences.com/wp-content/uploads/2021/02/cropped-android-chrome-512x512-1-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://cndlifesciences.com/wp-content/uploads/2021/02/cropped-android-chrome-512x512-1-32x32.png" sizes="32x32">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
- <script>
+    <script>
         // Handle routing for SPA
         if (window.location.pathname !== '/' && !window.location.pathname.includes('/index.html')) {
             history.replaceState(null, null, '/');
         }
     </script>
+</head>
 <body>
 <script src="script.js"></script>
 
 <img src="https://cndlifesciences.com/wp-content/uploads/2024/04/cnd.png" alt="CND Logo">
-<h1> Scientific Publication Library</h1>
+<h1>Scientific Publication Library</h1>
 
 <div class="filter-box">
     <label for="journalNameSearch">Search by Publication Name:</label>
@@ -49,22 +50,28 @@
     <label for="authorSearch">Search by Author:</label>
     <input type="text" id="authorSearch" onkeyup="searchByField('authorSearch', 6)" placeholder="Type to search..."> <br> <br>
 
+    <label for="sortOrder">Sort by Year:</label>
+    <select id="sortOrder" onchange="sortTableByYear()">
+        <option value="asc">Oldest to Newest</option>
+        <option value="desc">Newest to Oldest</option>
+    </select> <br><br>
+
     <button onclick="clearFilters()">Clear Filters</button><br><br>
     <div class="results-count" id="resultsCount">Results Found: 84</div>
 </div>
 
-
 <table id="referencesTable">
     <thead>
         <tr>
-            <th>Publication Name </th>
-	    <th>Article Title</th>
+            <th>Publication Name</th>
+            <th>Article Title</th>
             <th>URL</th>
             <th>Content Tags</th>
             <th>Neurology Sub-Specialty</th>
             <th>Related Product</th>
-            <th>Lead Authors</th>
+            <th>Authors</th>
             <th>Publication Reference</th>
+            <th>Year</th> <!-- New column header -->
         </tr>
     </thead>
     <tbody>
