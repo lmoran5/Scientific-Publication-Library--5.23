@@ -120,3 +120,4 @@ document.getElementById('subSpecialty').addEventListener('change', () => filterB
 document.getElementById('productDropdown').addEventListener('change', () => filterByDropdown('productDropdown', 5));
 document.getElementById('authorSearch').addEventListener('input', () => searchByField('authorSearch', 6));
 
+
