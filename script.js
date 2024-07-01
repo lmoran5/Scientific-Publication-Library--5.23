@@ -1,7 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
     history.pushState({}, "", "/scientific-publication-library-test");
     updateResultsCount();
+
+    document.getElementById("sortOrder").addEventListener("change", sortTableByYear);
 });
+
+function sortTableByYear() {
+    const table = document.getElementById("referencesTable");
+    const tbody = table.getElementsByTagName("tbody")[0];
+    const rows = Array.from(tbody.rows);
+    const sortOrder = document.getElementById("sortOrder").value;
+    const index = 8; // Assuming the year column is the 9th column (0-based index)
+
+    rows.sort((rowA, rowB) => {
+        const cellA = parseInt(rowA.cells[index].textContent) || 0;
+        const cellB = parseInt(rowB.cells[index].textContent) || 0;
+        return sortOrder === "asc" ? cellA - cellB : cellB - cellA;
+    });
+
+    // Re-attach sorted rows
+    rows.forEach(row => tbody.appendChild(row));
+}
 
 let filters = {
     journalNameSearch: '',
@@ -78,6 +97,7 @@ function clearFilters() {
     document.getElementById('subSpecialty').selectedIndex = 0;
     document.getElementById('productDropdown').selectedIndex = 0;
     document.getElementById('authorSearch').value = '';
+    document.getElementById('sortOrder').selectedIndex = 0;
 
     // Clear filter values
     filters = {
