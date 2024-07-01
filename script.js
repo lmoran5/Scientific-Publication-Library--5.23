@@ -59,6 +59,7 @@ function applyFilters() {
         const tdSubSpecialty = tr[i].getElementsByTagName("td")[4];
         const tdProduct = tr[i].getElementsByTagName("td")[5];
         const tdAuthor = tr[i].getElementsByTagName("td")[6];
+        const tdYear = tr[i].getElementsByTagName("td")[8]; // New column for Year
 
         const journalNameMatch = !filters.journalNameSearch || (tdJournalName && normalizeText(tdJournalName.textContent).includes(normalizeText(filters.journalNameSearch)));
         const articleTitleMatch = !filters.articleTitleSearch || (tdArticleTitle && normalizeText(tdArticleTitle.textContent).includes(normalizeText(filters.articleTitleSearch)));
@@ -66,8 +67,9 @@ function applyFilters() {
         const subSpecialtyMatch = !filters.subSpecialty || (tdSubSpecialty && normalizeText(tdSubSpecialty.textContent).includes(normalizeText(filters.subSpecialty)));
         const productMatch = !filters.productDropdown || (tdProduct && normalizeText(tdProduct.textContent).includes(normalizeText(filters.productDropdown)));
         const authorMatch = !filters.authorSearch || (tdAuthor && normalizeText(tdAuthor.textContent).includes(normalizeText(filters.authorSearch)));
+        const yearMatch = !filters.yearSearch || (tdYear && normalizeText(tdYear.textContent).includes(normalizeText(filters.yearSearch))); // Added year match
 
-        if (journalNameMatch && articleTitleMatch && tagMatch && subSpecialtyMatch && productMatch && authorMatch) {
+        if (journalNameMatch && articleTitleMatch && tagMatch && subSpecialtyMatch && productMatch && authorMatch && yearMatch) {
             tr[i].style.display = "";
         } else {
             tr[i].style.display = "none";
@@ -119,5 +121,6 @@ document.getElementById('tagSearch').addEventListener('input', () => searchByFie
 document.getElementById('subSpecialty').addEventListener('change', () => filterByDropdown('subSpecialty', 4));
 document.getElementById('productDropdown').addEventListener('change', () => filterByDropdown('productDropdown', 5));
 document.getElementById('authorSearch').addEventListener('input', () => searchByField('authorSearch', 6));
+
 
 
